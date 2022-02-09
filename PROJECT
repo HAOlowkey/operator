@@ -1,0 +1,6 @@
+domain: bsgchina.com
+layout:
+- go.kubebuilder.io/v3
+projectName: mysql-operator
+repo: gitlab.bsgchina.com/dbscale-kube/mysql-operator
+version: "3"
