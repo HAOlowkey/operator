@@ -3,4 +3,14 @@ layout:
 - go.kubebuilder.io/v3
 projectName: mysql-operator
 repo: gitlab.bsgchina.com/dbscale-kube/mysql-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: bsgchina.com
+  group: dbscale
+  kind: MysqlCluster
+  path: gitlab.bsgchina.com/dbscale-kube/mysql-operator/api/v1
+  version: v1
 version: "3"
