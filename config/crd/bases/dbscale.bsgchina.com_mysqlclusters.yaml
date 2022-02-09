@@ -5,9 +5,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
-  name: mysqlclusters.dbscale.bsgchina.com
+  name: mysqlclusters.v1.bsgchina.com
 spec:
-  group: dbscale.bsgchina.com
+  group: v1.bsgchina.com
   names:
     kind: MysqlCluster
     listKind: MysqlClusterList

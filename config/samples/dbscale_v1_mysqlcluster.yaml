@@ -1,4 +1,4 @@
-apiVersion: dbscale.bsgchina.com/v1
+apiVersion: v1.bsgchina.com/v1
 kind: MysqlCluster
 metadata:
   name: mysqlcluster-sample

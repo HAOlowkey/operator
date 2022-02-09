@@ -6,7 +6,7 @@ metadata:
   name: manager-role
 rules:
 - apiGroups:
-  - dbscale.bsgchina.com
+  - v1.bsgchina.com
   resources:
   - mysqlclusters
   verbs:
@@ -18,13 +18,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - dbscale.bsgchina.com
+  - v1.bsgchina.com
   resources:
   - mysqlclusters/finalizers
   verbs:
   - update
 - apiGroups:
-  - dbscale.bsgchina.com
+  - v1.bsgchina.com
   resources:
   - mysqlclusters/status
   verbs:

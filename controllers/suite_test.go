@@ -30,7 +30,7 @@ import (
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	dbscalev1 "gitlab.bsgchina.com/dbscale-kube/mysql-operator/api/v1"
+	dbscalev1 "gitlab.bsgchina.com/dbscale-kube/mysql-operator/api/dbscale"
 	//+kubebuilder:scaffold:imports
 )
 

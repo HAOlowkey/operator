@@ -24,7 +24,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
-	dbscalev1 "gitlab.bsgchina.com/dbscale-kube/mysql-operator/api/v1"
+	dbscalev1 "gitlab.bsgchina.com/dbscale-kube/mysql-operator/api/dbscale"
 )
 
 // MysqlClusterReconciler reconciles a MysqlCluster object
@@ -33,9 +33,9 @@ type MysqlClusterReconciler struct {
 	Scheme *runtime.Scheme
 }
 
-//+kubebuilder:rbac:groups=dbscale.bsgchina.com,resources=mysqlclusters,verbs=get;list;watch;create;update;patch;delete
-//+kubebuilder:rbac:groups=dbscale.bsgchina.com,resources=mysqlclusters/status,verbs=get;update;patch
-//+kubebuilder:rbac:groups=dbscale.bsgchina.com,resources=mysqlclusters/finalizers,verbs=update
+//+kubebuilder:rbac:groups=v1.bsgchina.com,resources=mysqlclusters,verbs=get;list;watch;create;update;patch;delete
+//+kubebuilder:rbac:groups=v1.bsgchina.com,resources=mysqlclusters/status,verbs=get;update;patch
+//+kubebuilder:rbac:groups=v1.bsgchina.com,resources=mysqlclusters/finalizers,verbs=update
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
