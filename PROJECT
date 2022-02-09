@@ -1,0 +1,3 @@
+domain: bsgchina.com
+repo: gitlab.bsgchina.com/dbscale-kube/mysql-operator
+version: "2"
