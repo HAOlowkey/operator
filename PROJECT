@@ -1,0 +1,6 @@
+domain: haolowkey.github.io
+layout:
+- go.kubebuilder.io/v3
+projectName: operator
+repo: github.com/HAOlowkey/operator
+version: "3"
