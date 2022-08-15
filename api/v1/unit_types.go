@@ -20,6 +20,19 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+type Port struct {
+	Name     string `json:"name"`
+	Port     int32  `json:"port"`
+	Protocol string `json:"protocol"`
+}
+
+type Container struct {
+	Name       string `json:"name"`
+	Ports      []Port `json:"ports"`
+	Repository string `json:"repository"`
+	Tag        string `json:"tag"`
+}
+
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
@@ -29,7 +42,9 @@ type UnitSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of Unit. Edit unit_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	MainContainer    Container   `json:"main_container"`
+	SideCarContainer []Container `json:"sidecar_container,omitempty"`
+	IpAddr           string      `json:"ip_addr"`
 }
 
 // UnitStatus defines the observed state of Unit
