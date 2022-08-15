@@ -28,7 +28,7 @@ type Port struct {
 
 type Container struct {
 	Name       string `json:"name"`
-	Ports      []Port `json:"ports"`
+	Ports      []Port `json:"ports,omitempty"`
 	Repository string `json:"repository"`
 	Tag        string `json:"tag"`
 }

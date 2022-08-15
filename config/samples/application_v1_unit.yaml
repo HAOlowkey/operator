@@ -4,3 +4,23 @@ metadata:
   name: unit-sample
 spec:
   # TODO(user): Add fields here
+  main_container:
+    name: mysql
+    ports:
+      - name: mysql
+        port: 3306
+        protocol: TCP
+    repository: haolowkey/mysql
+    tag: 8.0.26
+  sidecar_container:
+    - name: monitor
+      ports:
+        - name: exporter
+          port: 9194
+          protocol: TCP
+      repository: haolowkey/mysql-exporter
+      tag: 1.3.1
+    - name: log
+      repository: haolowkey/filebeat
+      tag: 7.15.1
+  ip_addr: 1.1.1.1
