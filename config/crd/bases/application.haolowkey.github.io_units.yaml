@@ -107,6 +107,11 @@ spec:
             description: UnitStatus defines the observed state of Unit
             type: object
         type: object
+    additionalPrinterColumns:
+      - name: Name
+        type: string
+        description: The name of resource
+        jsonPath: .spec.name
     served: true
     storage: true
     subresources:
