@@ -122,7 +122,7 @@ func (r *UnitReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.
 		}
 	} else {
 		logger.Info("existing Pod resource already exists for Unit, checking Image\")")
-
+		r.Recorder.Eventf(d, v1.EventTypeNormal, "Created", "test %s", pod.Name)
 		if unit.Spec.MainContainer.Repository+":"+unit.Spec.MainContainer.Tag != d.Spec.Containers[0].Image {
 			d.Spec.Containers[0].Image = unit.Spec.MainContainer.Repository + ":" + unit.Spec.MainContainer.Tag
 			if err = r.Update(ctx, d); err != nil {
@@ -151,6 +151,8 @@ func (r *UnitReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.
 		}
 	}
 
+	unit.Status.ContainerCount = int64(len(unit.Spec.SideCarContainer) + 1)
+	r.Status().Update(ctx, unit)
 	return ctrl.Result{}, nil
 }
 

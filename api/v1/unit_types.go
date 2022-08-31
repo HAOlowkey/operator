@@ -51,8 +51,11 @@ type UnitSpec struct {
 type UnitStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+	ContainerCount int64 `json:"container_count"`
 }
 
+//+kubebuilder:printcolumn:JSONPath=".status.container_count",name=count,type=integer
+//+kubebuilder:printcolumn:JSONPath=".spec.ip_addr",name=ipAddress,type=string
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
 
